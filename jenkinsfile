@@ -1,0 +1,19 @@
+#!groovy
+
+node ('agent any') {
+	stage('Checkout') {
+		sh 'echo git checkout'
+	} 
+	
+	stage ('Test'){
+		sh 'echo thos is test stage'
+		sh 'mvn test'
+	}
+	
+	stage ('Build stage') {
+		sh 'mvn clenan install'
+	}
+	stage ('Deployment'){
+		sh 'cp /target/*.jar /opt/tomcat/appache-tomcat-9.0/webapps/'
+	} 
+}
