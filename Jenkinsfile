@@ -14,6 +14,6 @@ node  {
 		sh 'mvn clean install'
 	}
 	stage('Deployment'){
-		sh 'cp ./target/*.war /opt/tomcat/webapps/'
+		sh 'sudo cp target/*.war /opt/tomcat/webapps/'
 	} 
 }
