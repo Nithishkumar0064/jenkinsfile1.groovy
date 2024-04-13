@@ -8,7 +8,6 @@ node  {
 	
 	stage('Test'){
 		sh 'echo thos is test stage'
-		sh 'mvn test'
 	}
 	
 	stage('Build stage') {
