@@ -11,7 +11,7 @@ node  {
 	}
 	
 	stage('Build stage') {
-		sh 'mvn clenan install'
+		sh 'mvn clean install'
 	}
 	stage('Deployment'){
 		sh 'cp ./target/*.war /opt/tomcat/webapps/'
