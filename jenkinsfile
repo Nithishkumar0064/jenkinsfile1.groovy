@@ -2,7 +2,7 @@
 
 node ('agent any') {
 	stage('Checkout') {
-		sh 'echo git checkout'
+		sh 'git branch: 'main', url: 'https://github.com/Nithishkumar0064/java-example.git'
 	} 
 	
 	stage ('Test'){
@@ -14,6 +14,6 @@ node ('agent any') {
 		sh 'mvn clenan install'
 	}
 	stage ('Deployment'){
-		sh 'cp /target/*.jar /opt/tomcat/appache-tomcat-9.0/webapps/'
+		sh 'cp /target/*.war /opt/tomcat/webapps/'
 	} 
 }
