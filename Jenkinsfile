@@ -1,19 +1,20 @@
 #!groovy
 
-node ('agent any') {
+node  {
+	
 	stage('Checkout') {
 		 git branch: 'main', url: 'https://github.com/Nithishkumar0064/java-example.git'
 	} 
 	
-	stage ('Test'){
+	stage('Test'){
 		sh 'echo thos is test stage'
 		sh 'mvn test'
 	}
 	
-	stage ('Build stage') {
+	stage('Build stage') {
 		sh 'mvn clenan install'
 	}
-	stage ('Deployment'){
+	stage('Deployment'){
 		sh 'cp ./target/*.war /opt/tomcat/webapps/'
 	} 
 }
